@@ -1,0 +1,7 @@
+# a2rtech — https://a2rtech.com/
+# All pages are public and crawlable.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://a2rtech.com/sitemap.xml
