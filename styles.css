@@ -454,3 +454,47 @@ footer{border-top:1px solid var(--hair);padding-block:44px 52px;font-size:15px;}
   html{scroll-behavior:auto;}
   *{transition:none!important;animation:none!important;}
 }
+
+/* ---------------- generic pipeline (home hero) ---------------- */
+.pipefig{margin:54px auto 0;max-width:960px;}
+.pipe{
+  display:grid;grid-template-columns:1fr 30px 1.3fr 30px 1fr;align-items:stretch;
+  text-align:left;
+}
+.pipe-col{background:var(--panel);border:1px solid var(--line);border-radius:7px;padding:20px 18px;}
+.pipe-core{border-color:var(--accent);}
+.pipe-label{
+  font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 12px;
+}
+.chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;}
+.chips li{
+  font-size:13.5px;color:var(--ink-soft);background:var(--surface);border:1px solid var(--hair);
+  border-radius:20px;padding:4px 11px;line-height:1.35;
+}
+.pipe-steps{list-style:none;margin:0;padding:0;display:grid;gap:10px;counter-reset:pstep;}
+.pipe-steps li{
+  counter-increment:pstep;font-size:14.5px;color:var(--muted);line-height:1.4;
+  padding-left:29px;position:relative;
+}
+.pipe-steps li::before{
+  content:counter(pstep);position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;
+  display:grid;place-items:center;background:var(--accent-wash);color:var(--accent);
+  font-family:"JetBrains Mono",monospace;font-size:11px;
+}
+.pipe-steps b{color:var(--ink);font-weight:600;}
+.pipe-arrow{display:grid;place-items:center;color:var(--accent);}
+.pipe-arrow svg{color:var(--accent);width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.pipefig figcaption{margin:16px auto 0;max-width:62ch;font-size:14px;color:var(--faint);line-height:1.45;text-align:center;}
+@media (max-width:820px){
+  .pipe{grid-template-columns:1fr;max-width:460px;margin-inline:auto;}
+  .pipe-arrow{height:30px;transform:rotate(90deg);}
+}
+
+/* ---------------- example cards (same pattern, any business) ---------------- */
+.ex p + p{margin-top:8px;}
+.ex p b{color:var(--ink);font-weight:600;}
+.card .uses{
+  margin-top:auto;padding-top:14px;font-family:"JetBrains Mono",monospace;
+  font-size:11.5px;letter-spacing:.03em;color:var(--faint);line-height:1.5;
+}
