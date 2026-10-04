@@ -216,6 +216,20 @@
         <h2>Step by step: one automation</h2>
         <p>Every automation we build follows the same seven steps. Here is what happens at each one, and the tools we use.</p>
       </div>
+      <figure class="canvas">
+        <div class="canvas-row">
+          <div class="node"><small>Start &#183; Gmail</small><b>New email with an invoice</b></div>
+          <div class="wire" aria-hidden="true"></div>
+          <div class="node"><small>Understand &#183; Claude</small><b>Read vendor, date, amount</b></div>
+          <div class="wire" aria-hidden="true"></div>
+          <div class="node"><small>Check &#183; Rule</small><b>Over $500?</b></div>
+          <div class="wire" aria-hidden="true"></div>
+          <div class="node human"><small>Approve &#183; Slack</small><b>Manager clicks Approve</b></div>
+          <div class="wire" aria-hidden="true"></div>
+          <div class="node"><small>Act &#183; Sheets</small><b>Row added, file saved</b></div>
+        </div>
+        <figcaption>Example: an invoice workflow, as we would build it in n8n. Under $500 skips the approval step.</figcaption>
+      </figure>
       <ol class="stages">
       <li class="stage">
         <span class="num" aria-hidden="true">01</span>

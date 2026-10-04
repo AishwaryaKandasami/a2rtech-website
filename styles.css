@@ -498,3 +498,55 @@ footer{border-top:1px solid var(--hair);padding-block:44px 52px;font-size:15px;}
   margin-top:auto;padding-top:14px;font-family:"JetBrains Mono",monospace;
   font-size:11.5px;letter-spacing:.03em;color:var(--faint);line-height:1.5;
 }
+
+/* ---------------- product mockups ("shots") ---------------- */
+.shot{
+  background:var(--ground);border:1px solid var(--line);border-radius:8px;
+  padding:12px 14px 14px;margin-bottom:18px;min-height:188px;
+  display:flex;flex-direction:column;gap:10px;font-size:13px;line-height:1.35;
+}
+.shot-bar{
+  display:flex;align-items:center;gap:7px;font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);
+  padding-bottom:8px;border-bottom:1px solid var(--hair);
+}
+.shot-bar .live{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none;}
+.shot p{margin:0;}
+.msg{background:var(--panel);border:1px solid var(--hair);border-radius:6px;padding:10px 11px;}
+.shot .msg-title{font-weight:600;color:var(--ink);font-size:13.5px;}
+.shot .msg-meta{color:var(--muted);font-size:12.5px;margin-top:2px!important;}
+.msg-btns{display:flex;gap:6px;margin-top:9px;}
+.msg-btns span{font-size:12px;font-weight:600;padding:4px 11px;border-radius:4px;border:1px solid var(--line);color:var(--ink);}
+.msg-btns .ok{background:var(--accent);border-color:var(--accent);color:var(--ground);}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.kpis b{display:block;font-size:16px;color:var(--ink);letter-spacing:-.02em;font-variant-numeric:tabular-nums;}
+.kpis b.up{color:var(--accent);}
+.kpis span{font-size:11.5px;color:var(--faint);}
+.bars{display:flex;align-items:flex-end;gap:5px;height:44px;margin-top:auto;}
+.bars i{flex:1;height:var(--h);background:var(--accent-wash);border-top:2px solid var(--accent);border-radius:2px 2px 0 0;}
+.bars i:last-child{background:var(--accent);}
+.shot .bubble{max-width:88%;padding:7px 10px;border-radius:10px;font-size:12.5px;}
+.bubble.q{align-self:flex-end;background:var(--surface);color:var(--ink);border-bottom-right-radius:3px;}
+.bubble.a{align-self:flex-start;background:var(--panel);border:1px solid var(--hair);color:var(--ink-soft);border-bottom-left-radius:3px;}
+.bubble .src{display:block;margin-top:4px;font-size:11px;color:var(--accent);}
+
+/* example workflow canvas (services) */
+.canvas{
+  max-width:860px;margin:0 auto 40px;background:var(--panel);border:1px solid var(--line);
+  border-radius:8px;padding:18px;
+  background-image:radial-gradient(var(--hair) 1px,transparent 1px);background-size:16px 16px;
+}
+.canvas-row{display:flex;align-items:center;gap:0;flex-wrap:nowrap;}
+.node{
+  flex:1 1 0;min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:7px;
+  padding:10px 11px;box-shadow:var(--shadow);
+}
+.node small{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.node b{display:block;font-size:13.5px;font-weight:600;color:var(--ink);line-height:1.3;}
+.node.human{border-color:var(--accent);}
+.wire{flex:0 0 22px;height:2px;background:var(--accent);opacity:.55;}
+.canvas figcaption{margin-top:14px;font-size:13.5px;color:var(--faint);text-align:center;}
+@media (max-width:760px){
+  .canvas-row{flex-direction:column;align-items:stretch;}
+  .wire{flex:0 0 16px;width:2px;height:16px;margin-inline:auto;}
+}
