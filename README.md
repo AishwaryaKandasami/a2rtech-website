@@ -11,7 +11,8 @@ The marketing website for a2rtech. Plain HTML and CSS — no build step, no fram
 | `privacy.html`, `terms.html` | Legal pages |
 | `styles.css` | All styling for every page (colours, fonts, layout, dark mode) |
 | `site.js` | Mobile menu and the "Copy address" button on the Contact page |
-| `favicon.svg` | Browser tab icon |
+| `favicon.svg`, `logo.svg` | Logo mark (browser tab icon and site header) |
+| `logo-full.svg` | Logo mark with the a2rtech wordmark, for documents, email signatures and social profiles |
 | `og-image.png` | Preview image shown when a link is shared (1200 × 630) |
 | `robots.txt`, `sitemap.xml` | For search engines |
 

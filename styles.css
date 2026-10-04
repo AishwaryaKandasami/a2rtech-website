@@ -5,41 +5,50 @@
    =========================================================== */
 
 :root{
-  --ground:#FBFAF6;
-  --surface:#F4F3ED;
+  /* palette: deep navy ink, growth green + trust blue, cool grey-blue neutrals */
+  --ground:#F7FAFC;
+  --surface:#EEF4F8;
   --panel:#FFFFFF;
-  --ink:#14160F;
-  --ink-soft:#3A3D33;
-  --muted:#5E6158;
-  --faint:#6B6E63;
-  --line:#E2E2D8;
-  --hair:#EAEAE1;
-  --accent:#0E6B3D;
-  --accent-on-dark:#7FD3A4;
-  --accent-wash:#EAF2EC;
-  --on-band-soft:rgba(255,255,255,.78);
-  --on-band-line:rgba(255,255,255,.28);
-  --on-band-grid:rgba(255,255,255,.14);
-  --shadow:0 1px 2px rgba(20,22,15,.04), 0 8px 24px rgba(20,22,15,.05);
+  --ink:#0C1B2A;
+  --ink-soft:#2C3E51;
+  --muted:#506276;
+  --faint:#5E7187;
+  --line:#D8E2EB;
+  --hair:#E4EBF1;
+  --accent:#0B8457;
+  --accent-2:#1E5BD8;
+  --accent-wash:#E2F4EB;
+  --blue-wash:#E6EEFD;
+  --grad:linear-gradient(120deg,#0B8457 0%,#1E5BD8 100%);
+  --on-accent:#FFFFFF;
+  --band:#0C1B2A;
+  --band-ink:#F2F7FB;
+  --accent-on-dark:#5EE0A8;
+  --on-band-soft:rgba(242,247,251,.78);
+  --on-band-line:rgba(242,247,251,.3);
+  --on-band-grid:rgba(242,247,251,.14);
+  --shadow:0 1px 2px rgba(12,27,42,.05), 0 10px 30px rgba(12,27,42,.07);
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --ground:#12130F; --surface:#1A1B15; --panel:#1E1F18;
-    --ink:#EDEDE4; --ink-soft:#C9CABE; --muted:#9B9E93; --faint:#8A8D82;
-    --line:#2C2D24; --hair:#24251D;
-    --accent:#6DC694; --accent-on-dark:#0E6B3D; --accent-wash:#18241C;
-    --on-band-soft:#3A3D33; --on-band-line:rgba(0,0,0,.28); --on-band-grid:rgba(0,0,0,.14);
-    --shadow:0 1px 2px rgba(0,0,0,.2), 0 8px 24px rgba(0,0,0,.24);
+    --ground:#0A131D; --surface:#0E1A27; --panel:#122131;
+    --ink:#E9F1F8; --ink-soft:#C3D2E0; --muted:#93A7BA; --faint:#8599AD;
+    --line:#22364B; --hair:#18293B;
+    --accent:#3DD598; --accent-2:#6FA3FF; --accent-wash:#123126; --blue-wash:#14264A;
+    --grad:linear-gradient(120deg,#16A06C 0%,#2F6FE4 100%);
+    --band:#071019;
+    --shadow:0 1px 2px rgba(0,0,0,.25), 0 10px 30px rgba(0,0,0,.3);
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --ground:#12130F; --surface:#1A1B15; --panel:#1E1F18;
-  --ink:#EDEDE4; --ink-soft:#C9CABE; --muted:#9B9E93; --faint:#8A8D82;
-  --line:#2C2D24; --hair:#24251D;
-  --accent:#6DC694; --accent-on-dark:#0E6B3D; --accent-wash:#18241C;
-  --on-band-soft:#3A3D33; --on-band-line:rgba(0,0,0,.28); --on-band-grid:rgba(0,0,0,.14);
-  --shadow:0 1px 2px rgba(0,0,0,.2), 0 8px 24px rgba(0,0,0,.24);
+  --ground:#0A131D; --surface:#0E1A27; --panel:#122131;
+  --ink:#E9F1F8; --ink-soft:#C3D2E0; --muted:#93A7BA; --faint:#8599AD;
+  --line:#22364B; --hair:#18293B;
+  --accent:#3DD598; --accent-2:#6FA3FF; --accent-wash:#123126; --blue-wash:#14264A;
+  --grad:linear-gradient(120deg,#16A06C 0%,#2F6FE4 100%);
+  --band:#071019;
+  --shadow:0 1px 2px rgba(0,0,0,.25), 0 10px 30px rgba(0,0,0,.3);
   color-scheme:dark;
 }
 
@@ -130,14 +139,14 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   text-decoration:none;border:1px solid transparent;line-height:1.2;cursor:pointer;
   font-family:inherit;
 }
-.btn-primary{background:var(--ink);color:var(--ground);}
+.btn-primary{background:var(--grad);color:var(--on-accent);box-shadow:0 6px 18px -8px rgba(30,91,216,.6);}
 .btn-primary:hover{opacity:.87;}
 .btn-ghost{border-color:var(--line);color:var(--ink);background:transparent;}
 .btn-ghost:hover{border-color:var(--ink);}
-.btn-invert{background:var(--ground);color:var(--ink);}
+.btn-invert{background:var(--band-ink);color:var(--band);}
 .btn-invert:hover{opacity:.9;}
-.btn-outline-light{border-color:var(--on-band-line);color:var(--ground);background:transparent;}
-.btn-outline-light:hover{border-color:var(--ground);}
+.btn-outline-light{border-color:var(--on-band-line);color:var(--band-ink);background:transparent;}
+.btn-outline-light:hover{border-color:var(--band-ink);}
 .btn-sm{font-size:14px;padding:9px 15px;}
 
 /* ---------------- type ---------------- */
@@ -166,7 +175,7 @@ p:last-child{margin-bottom:0;}
 /* ---------------- section shell + CENTRED headings ---------------- */
 section{padding-block:76px;}
 .tinted{background:var(--surface);border-block:1px solid var(--hair);}
-.band{background:var(--ink);color:var(--ground);}
+.band{background:var(--band);color:var(--band-ink);background-image:radial-gradient(60% 120% at 0% 0%,rgba(22,160,108,.35),transparent 60%),radial-gradient(60% 120% at 100% 100%,rgba(47,111,228,.4),transparent 60%);}
 .band .kicker{color:var(--accent-on-dark);}
 .band p{color:var(--on-band-soft);}
 
@@ -550,3 +559,31 @@ footer{border-top:1px solid var(--hair);padding-block:44px 52px;font-size:15px;}
   .canvas-row{flex-direction:column;align-items:stretch;}
   .wire{flex:0 0 16px;width:2px;height:16px;margin-inline:auto;}
 }
+
+/* ---------------- green & blue brand layer ---------------- */
+.brand-mark{width:26px;height:26px;flex:none;display:block;}
+.kicker{color:var(--accent-2);}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.hero{position:relative;isolation:isolate;}
+.hero::before{
+  content:"";position:absolute;z-index:-1;inset:-40px -22vw auto;height:620px;pointer-events:none;
+  background:
+    radial-gradient(40% 55% at 22% 18%,rgba(11,132,87,.16),transparent 70%),
+    radial-gradient(42% 55% at 80% 12%,rgba(30,91,216,.16),transparent 70%);
+}
+.card .ico,.flow-step .ico{background:linear-gradient(135deg,var(--accent-wash),var(--blue-wash));color:var(--accent-2);}
+a.card:hover{border-color:var(--accent-2);}
+.fact h3{border-top:2px solid transparent;border-image:var(--grad) 1;}
+.flow-arrow,.pipe-arrow,.pipe-arrow svg{color:var(--accent-2);}
+.pipe-core,.flow-step.is-human,.node.human{border-color:var(--accent-2);}
+.pipe-steps li::before{background:var(--grad);color:var(--on-accent);}
+.stage .num{background:var(--grad);color:var(--on-accent);}
+.stage .out{background:var(--blue-wash);color:var(--accent-2);}
+.inline-link{color:var(--accent-2);}
+.brand-dot{background:var(--grad);}
+.wire{background:var(--grad);opacity:.7;}
+.tinted{background:linear-gradient(180deg,var(--surface),var(--ground));}
+main{overflow-x:clip;}
+.hero h1{max-width:24ch;}
+.hero h1 .grad-text{display:block;}
+.hero h1{text-wrap:balance;}
